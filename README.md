@@ -1,4 +1,6 @@
 # AluraFlix
+[Demo de proyecto](https://alura-flix-pi-two.vercel.app/) <- Click aquí
+
 Esta es una aplicación en React para ver videos. La aplicación permite a los usuarios ver, agregar, editar y eliminar tarjetas de video categorizadas en Frontend, Backend, e Innovación y Gestión.
 ![222shots_so](https://github.com/user-attachments/assets/4f14e8a7-b94a-41ff-bd9e-dfb42ab127e9)
 
