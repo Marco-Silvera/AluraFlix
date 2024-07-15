@@ -30,34 +30,161 @@ const NuevoVideoPage = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <h2>Crear Nuevo Video</h2>
-            <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required />
-            <textarea value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required></textarea>
-            <input type="text" value={imagen} onChange={(e) => setImagen(e.target.value)} placeholder="Link de Imagen" required />
-            <input type="text" value={video} onChange={(e) => setVideo(e.target.value)} placeholder="Link de Video" required />
-            <select value={categoria} onChange={(e) => setCategoria(e.target.value)} required>
-                <option value="">Seleccionar Categoría</option>
-                <option value="Frontend">Frontend</option>
-                <option value="Backend">Backend</option>
-                <option value="Innovacion y Gestion">Innovación y Gestión</option>
-            </select>
-            <button type="submit">Crear</button>
-            <button type="button" onClick={() => {
-                setTitulo('');
-                setDescripcion('');
-                setImagen('');
-                setVideo('');
-                setCategoria('');
-            }}>Limpiar</button>
-        </Form>
+        <SectionFormulario>
+            <ContainerTexto>
+                <h2>Nuevo Video</h2>
+                <p>Complete el formulario para crear una nueva tarjeta de video</p>
+            </ContainerTexto>
+            <Form onSubmit={handleSubmit}>
+                <label htmlFor=""> Titulo
+                    <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required />
+                </label>
+                <label htmlFor="">Categoria
+                    <select value={categoria} onChange={(e) => setCategoria(e.target.value)} required>
+                        <option value="">Seleccionar Categoría</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Innovacion y Gestion">Innovación y Gestión</option>
+                    </select>
+                </label>
+                <label htmlFor="">Imagen
+                    <input type="text" value={imagen} onChange={(e) => setImagen(e.target.value)} placeholder="Link de Imagen" required />
+                </label>
+                <label htmlFor="">Video
+                    <input type="text" value={video} onChange={(e) => setVideo(e.target.value)} placeholder="Link de Video" required />
+                </label>
+                <label htmlFor="">Descripción
+                    <textarea value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required></textarea>
+                </label>
+                <ButtonContainer>
+                    <button type="submit">Crear</button>
+                    <button type="button" onClick={() => {
+                        setTitulo('');
+                        setDescripcion('');
+                        setImagen('');
+                        setVideo('');
+                        setCategoria('');
+                    }}>Limpiar</button>
+                </ButtonContainer>
+            </Form>
+        </SectionFormulario>
     );
 };
 
+const SectionFormulario = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 127px;
+    flex: 1;
+    width: 100%;
+    background-color: #262626;    
+`
+
+const ContainerTexto = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    >h2 {
+        font-size: 60px;
+        text-transform: uppercase;
+    }
+    >p {
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 20px;
+    }
+`
+
 const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    width: 1400px;
+    > label {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: start;
+        > input {
+        background-color: transparent;
+        border: 3px solid #191919;
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #A5A5A5;
+        padding: 16px 10px;
+        outline: none;
+        &:focus {
+            border-color: white;
+            }
+        }
+        > select {
+            background-color: transparent;
+            border: 3px solid #191919;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #A5A5A5;
+            padding: 16px 10px;
+            outline: none;
+        }
+        > textarea {
+            background-color: transparent;
+            border: 3px solid #191919;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 16px 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #A5A5A5;
+            height: 250px;
+            resize: none;
+            outline: none;
+            &:focus {
+            border-color: white;
+            }
+        }
+    }
+`
+
+const ButtonContainer = styled.div`
+    grid-column: span 2;
+    display: flex;
+    gap: 30px;
+    > button {
+        width: 180px;
+        height: 50px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+        background-color: transparent;
+        border: 3px solid white;
+        border-radius: 15px;
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    > button:nth-child(1){
+        border-color: red;
+        &:hover{
+            background-color: red;
+            color: white;
+        }
+    }
+`
 
 export default NuevoVideoPage;

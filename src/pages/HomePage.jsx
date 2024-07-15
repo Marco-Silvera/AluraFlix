@@ -12,7 +12,7 @@ const HomePage = () => {
     const [editVideo, setEditVideo] = useState(null);
 
     useEffect(() => {
-        // Set the initial video to the one with id: 1
+        // Seteo del video inicial con el id: 1
         const initialVideo = videos.find(video => video.id === 1);
         setSelectedVideo(initialVideo);
     }, [videos]);
@@ -36,21 +36,23 @@ const HomePage = () => {
     };
 
     return (
-        <div>
+        <HomePageContainer>
             <Hero video={selectedVideo} />
             <Section>
                 {['Frontend', 'Backend', 'Innovacion y Gestion'].map(category => (
                     <CategorySection key={category}>
                         <h2>{category}</h2>
-                        {videos.filter(video => video.categoria === category).map(video => (
-                            <Card
-                                key={video.id}
-                                video={video}
-                                onSelect={handleSelectVideo}
-                                onDelete={handleDelete}
-                                onEdit={handleEdit}
-                            />
-                        ))}
+                        <SectionCards>
+                            {videos.filter(video => video.categoria === category).map(video => (
+                                <Card
+                                    key={video.id}
+                                    video={video}
+                                    onSelect={handleSelectVideo}
+                                    onDelete={handleDelete}
+                                    onEdit={handleEdit}
+                                />
+                            ))}
+                        </SectionCards>
                     </CategorySection>
                 ))}
             </Section>
@@ -61,17 +63,47 @@ const HomePage = () => {
                     onSave={handleSave}
                 />
             )}
-        </div>
+        </HomePageContainer>
     );
 };
 
+const HomePageContainer = styled.main`
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+`
+
 const Section = styled.section`
-  display: flex;
-  justify-content: space-between;
-`;
+    display: flex;
+    flex-direction: column;
+    gap: 94px;
+    padding: 100px 40px;
+    max-width: 1400px;
+`
 
 const CategorySection = styled.div`
-  width: 30%;
-`;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    >h2 {
+        font-size: 32px;
+        color: white;
+    }
+    @media (max-width: 1500px){
+        max-width: 800px;
+    }
+`
+
+const SectionCards = styled.section`
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    max-width: 1400px;
+    justify-content: flex-start;
+    padding: 0 20px;
+`
 
 export default HomePage;
