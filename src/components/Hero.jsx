@@ -27,6 +27,7 @@ const HeroSection = styled.section`
     display: flex;
     justify-content: center;
     width: 100%;
+    overflow-x: hidden;
     height: 850px;
     background-size: cover;
     background-position: center;
@@ -39,6 +40,19 @@ const HeroSection = styled.section`
         width: 50%;
         aspect-ratio: 16/9;
     }
+    @media (max-width: 1500px){
+        iframe {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 900px){
+        height: 700px;
+    }
+
+    @media (max-width: 660px){
+        height: 600px;
+    }
 `
 
 const SectionHero = styled.section`
@@ -46,14 +60,23 @@ const SectionHero = styled.section`
     justify-content: space-between;
     flex-direction: row-reverse;
     width: 1400px;
+    @media (max-width: 1500px){
+        flex-direction: column-reverse;
+        align-items: center;
+        max-width: 800px;
+        gap: 40px;
+    }
 `
 
 const ContainerTexto = styled.div`
-    width: 600px;
+    max-width: 600px;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @media (max-width: 900px){
+        padding: 0 20px;
+    }
 `
 
 const Categoria = styled.p`
@@ -63,17 +86,26 @@ const Categoria = styled.p`
     font-size: 48px;
     font-weight: bold;
     background-color: red;
+    @media (max-width: 900px){
+        font-size: 24px;
+    }
 `
 
 const Titulo = styled.h1`
     font-size: 46px;
     text-align: start;
+    @media (max-width: 900px){
+        font-size: 23px;
+    }
 `
 
 const Descripcion = styled.p`
     text-align: start;
     font-size: 18px;
     font-weight: normal;
+    @media (max-width: 900px){
+        font-size: 12px;
+    }
 `
 
 export default Hero;

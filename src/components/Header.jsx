@@ -46,6 +46,11 @@ const ContainerHeader = styled.div`
         width: 170px;
         filter: invert(31%) sepia(100%) saturate(10000%) hue-rotate(0deg) brightness(100%) contrast(100%);
     }
+    
+    @media (max-width: 660px){
+        width: 100%;
+        justify-content: center;
+    }
 `
 
 const ContainerBotones = styled.div`
@@ -58,6 +63,11 @@ const ContainerBotones = styled.div`
         border-radius: 15px;
         cursor: pointer;
         font-weight: 700;
+    }
+
+    
+    @media (max-width: 660px){
+        display: none;
     }
 `
 

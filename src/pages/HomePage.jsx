@@ -81,6 +81,10 @@ const Section = styled.section`
     gap: 94px;
     padding: 100px 40px;
     max-width: 1400px;
+    
+    @media (max-width: 660px){
+        padding: 100px 0px;
+    }
 `
 
 const CategorySection = styled.div`
@@ -92,8 +96,28 @@ const CategorySection = styled.div`
         font-size: 32px;
         color: white;
     }
+
     @media (max-width: 1500px){
         max-width: 800px;
+    }
+    
+    @media (max-width: 900px){
+        max-width: 500px;
+    }
+
+    
+    @media (max-width: 660px){
+        max-width: 400px;
+    }
+
+    
+    @media (max-width: 460px){
+        max-width: 300px;
+    }
+
+    
+    @media (max-width: 360px){
+        max-width: 150px;
     }
 `
 
@@ -101,9 +125,23 @@ const SectionCards = styled.section`
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    max-width: 1400px;
+    width: 100%;
     justify-content: flex-start;
     padding: 0 20px;
+    @media (max-width: 1500px){
+        max-width: 800px;
+    }
+
+    @media (max-width: 900px){
+        max-width: 80%;
+    }
+
+    
+    @media (max-width: 660px){
+        max-width: 100%;
+    }
+    
+
 `
 
 export default HomePage;

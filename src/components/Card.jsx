@@ -15,7 +15,6 @@ const Card = ({ video, onSelect, onDelete, onEdit }) => {
 };
 
 const CardContainer = styled.div`
-    width: 400px;
     border: 1px solid #ddd;
     border-radius: 0 0 20px 20px;
     img {
@@ -25,6 +24,15 @@ const CardContainer = styled.div`
         object-fit: cover;
         object-position: center;
         background-position: center;
+        
+    @media (max-width: 900px){
+        width: 300px;
+    }
+
+    
+    @media (max-width: 660px){
+        width: 200px;
+    }
     }
 `
 
