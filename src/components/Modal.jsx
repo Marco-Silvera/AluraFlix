@@ -73,7 +73,7 @@ const ModalContent = styled.div`
     padding: 20px;
     border-radius: 15px;
     width: 974px;
-    height: 70%;
+    height: 75%;
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -82,6 +82,10 @@ const ModalContent = styled.div`
     > h2 {
         color: white;
         font-size: 60px;
+        text-align: center;
+        @media (max-width: 460px){
+                    font-size: 30px;
+        }
     }
     form {
         display: flex;
@@ -109,6 +113,11 @@ const ModalContent = styled.div`
                 &:focus {
                     border-color: white;
                 }
+
+                @media (max-width: 460px){
+                    font-size: 12px;
+                    padding: 8px;
+                }
             }
             > select {
                 background-color: transparent;
@@ -120,6 +129,9 @@ const ModalContent = styled.div`
                 color: #A5A5A5;
                 padding: 16px 10px;
                 outline: none;
+                @media (max-width: 460px){
+                    font-size: 12px;
+                }
             }
             > textarea {
                 background-color: transparent;
@@ -136,8 +148,33 @@ const ModalContent = styled.div`
                 &:focus {
                     border-color: white;
                 }
+                @media (max-width: 460px){
+                    font-size: 12px;
+                    height: 50px;
+                    padding: 8px;
+                }
+            }
+            @media (max-width: 460px){
+                    font-size: 12px;
             }
         }
+
+        @media (max-width: 1200px){
+        width: 100%;
+    }
+    }
+
+    @media (max-width: 1200px){
+        width: 600px;
+    }
+
+    @media (max-width: 680px){
+        width: 100%;
+        margin: 0 20px;
+    }
+
+    @media (max-width: 460px){
+        height: fit-content;
     }
 `
 
@@ -160,6 +197,12 @@ const ContainerButton = styled.div`
             background-color: white;
             color: black;
         }
+
+        @media (max-width: 460px){
+        font-size: 12px;
+        height: 40px;
+        width: 100px;
+    }
     }
     > button:nth-child(1){
         border-color: red;
@@ -167,6 +210,12 @@ const ContainerButton = styled.div`
             background-color: red;
             color: white;
         }
+    }
+
+    @media (max-width: 600px){
+        flex-direction: column;
+        gap: 20px;
+        align-self: center;
     }
 `
 

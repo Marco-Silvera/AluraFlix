@@ -79,7 +79,7 @@ const SectionFormulario = styled.section`
     align-items: center;
     margin-top: 127px;
     flex: 1;
-    width: 100%;
+    padding: 100px 20px;
     background-color: #262626;    
 `
 
@@ -87,17 +87,26 @@ const ContainerTexto = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0 20px;
     text-align: center;
     color: white;
     font-weight: bold;
     >h2 {
         font-size: 60px;
         text-transform: uppercase;
+
+        @media (max-width: 460px){
+        font-size: 30px;
+        }
     }
     >p {
         text-transform: uppercase;
         font-weight: 200;
         font-size: 20px;
+
+        @media (max-width: 460px){
+        font-size: 12px;
+        }
     }
 `
 
@@ -156,6 +165,17 @@ const Form = styled.form`
             }
         }
     }
+
+    
+    @media (max-width: 1500px){
+        width: 800px;
+    }
+
+    @media (max-width: 900px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 `
 
 const ButtonContainer = styled.div`
@@ -177,6 +197,10 @@ const ButtonContainer = styled.div`
             background-color: white;
             color: black;
         }
+
+        @media (max-width: 460px){
+            width: 100px;
+        }
     }
     > button:nth-child(1){
         border-color: red;
@@ -184,6 +208,10 @@ const ButtonContainer = styled.div`
             background-color: red;
             color: white;
         }
+    }
+
+    @media (max-width: 460px){
+        flex-direction: column;
     }
 `
 
